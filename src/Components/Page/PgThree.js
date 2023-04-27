@@ -14,7 +14,7 @@ function PgThree() {
   const [questionCount, setQuestionCount] = useState(1);
   const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [remainingTime, setRemainingTime] = useState(2);
+  const [remainingTime, setRemainingTime] = useState(180);
 
 
 
@@ -77,7 +77,7 @@ function PgThree() {
   // set timer to 180 seconds
   function handleNextQuestion() {
     setCurrentQuestionIndex(prevCurrentQuestionIndex => prevCurrentQuestionIndex + 1);
-    setRemainingTime(2);
+    setRemainingTime(180);
   }
   
   function handleAnswerSubmit() {
@@ -92,20 +92,19 @@ function PgThree() {
     }
     if (questionCount === 20) {
       if (score >= 15) {
-        // alert(' ');
-        // Swal.fire({
-        //   icon: 'success',
-        //   title: 'Hey...',
-        //   text: 'You passed with a score of ' + score + '/20.' + 'Congratulation, You are eligible for the SUPER CLASS!',
-        // })
-        // navigate('/page4');
+        Swal.fire({
+          icon: 'success',
+          title: 'Hey...',
+          text: 'You passed with a score of ' + score + '/20.' + 'Congratulation, You are eligible for the SUPER CLASS!',
+        })
+        navigate('/page4');
       } else {
-        // Swal.fire({
-        //   icon: 'error',
-        //   title: 'Opps...',
-        //   text: 'You failed with a score of ' + score + '/20.' + 'Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
-        // })
-        // navigate('/page4');
+        Swal.fire({
+          icon: 'error',
+          title: 'Opps...',
+          text: 'You failed with a score of ' + score + '/20.' + 'Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
+        })
+        navigate('/page4');
       }
     } else {
       setQuestionCount(questionCount + 1);
@@ -137,7 +136,7 @@ const timeLefter = () => {
       <div>
       <p>Question No: {questionCount}/20</p>
         <img src={data.question} alt={`Question ${questionCount}`} />
-        <h3>{data.solution}</h3>
+        {/* <h3>{data.solution}</h3> */}
       </div>
       <form onSubmit={handleSubmit}>
         <label>

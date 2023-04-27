@@ -1,7 +1,7 @@
 import React from "react";
 import { Card,Button,Icon } from "semantic-ui-react"
 import "./Main.css"
-import image from '../../Components/Images/logo.png';
+import image from '../../Components/Images/question-job.png';
 import { useNavigate } from 'react-router-dom';
 import PgTwo from "./PgTwo";
 
@@ -16,7 +16,7 @@ import PgTwo from "./PgTwo";
           <Card className="Card">
         <Card.Content>
           <Card.Header className="cardHeader">Question Form</Card.Header>
-          <img src={image} alt="nepal" width="150rem" height="150rem"></img>
+          <img src={image} alt="nepal"width="100%" height="150rem" ></img>
           <br/><br/><br/>
           <Card.Description className="cardDescription">
           This small quiz is used to categorize students and send them to the Super class. There will be a total of 20 questions. We assign 5 points to each question. So, 75 points is the pass limit to join Super class. 

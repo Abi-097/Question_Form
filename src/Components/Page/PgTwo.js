@@ -1,6 +1,6 @@
 import {React,useState} from "react";
 import { Card,Button,Icon } from "semantic-ui-react";
-import image from '../../Components/Images/logo.png';
+import image from '../../Components/Images/light-bulb-clip-art.png';
 import { useNavigate } from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ export default function PgTwo(){
 <form onSubmit={handleSubmit} className="ui form attached fluid segment RegSize" >
 <Card.Header className="cardHeader">Register Form</Card.Header>
 <br/><br/>
-<img src={image} alt="nepal" width="100%" height="150rem"></img>
+<img src={image} alt="nepal" width="200rem" height="180rem"></img>
           <br/><br/> 
 
     <div class="field">
