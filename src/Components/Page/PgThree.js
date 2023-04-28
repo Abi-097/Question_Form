@@ -137,7 +137,7 @@ const timeLefter = () => {
       <p><b>Question No: {questionCount}/20</b></p>
       <p><b>Remaining time: {remainingTime} seconds</b></p>
         <img src={data.question} alt={`Question ${questionCount}`} />
-        {/* <h3>{data.solution}</h3> */}
+        <h3>{data.solution}</h3>
       </div>
       <form onSubmit={handleSubmit}>
         <label>
