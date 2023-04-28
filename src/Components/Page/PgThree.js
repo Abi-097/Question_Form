@@ -134,7 +134,8 @@ const timeLefter = () => {
    
       <h1>Questions</h1>
       <div>
-      <p>Question No: {questionCount}/20</p>
+      <p><b>Question No: {questionCount}/20</b></p>
+      <p><b>Remaining time: {remainingTime} seconds</b></p>
         <img src={data.question} alt={`Question ${questionCount}`} />
         {/* <h3>{data.solution}</h3> */}
       </div>
@@ -146,12 +147,12 @@ const timeLefter = () => {
           required/></div>
         </label>
         <div>
-      <p>Remaining time: {remainingTime} seconds</p>
     </div>
-        <br/><br/>
-       <Button color='grey' type="text" onClick={handleAnswerSubmit} >Submit/Next</Button>  
+        <br/> 
+        
       </form>
-      <div>
+      <div className='ui two buttons'>
+      <Button color='teal' type="text" onClick={handleAnswerSubmit} >Submit/Next</Button>  
       </div>
     </Card>
     </div>
