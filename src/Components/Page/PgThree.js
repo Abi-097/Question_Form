@@ -26,7 +26,7 @@ function PgThree() {
     timeLefter();
   }, [questionCount]);
 
-  const getData = () => {
+  const getData = () => {      //01
     axios({
       method: 'get',
       url: 'https://marcconrad.com/uob/smile/api.php',
@@ -40,12 +40,12 @@ function PgThree() {
       });
   };
 
-  useEffect(() => {
+  useEffect(() => {              //02
     const timer = setInterval(() => {
       setRemainingTime(prevRemainingTime => prevRemainingTime - 1);
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  },[currentQuestionIndex]);
 
   // this is the function of timer reducing goes next question
   useEffect(() => {
@@ -71,7 +71,7 @@ function PgThree() {
           }
       }
     }
-  }, [remainingTime]);
+  });
 
   // -------------------------------------
   // set timer to 180 seconds
@@ -96,18 +96,18 @@ function PgThree() {
           icon: 'success',
           title: 'Hey...',
           text: 'You passed with a score of ' + score + '/20.' + 'Congratulation, You are eligible for the SUPER CLASS!',
-        })
-        navigate('/page4');
+        }).then(() => navigate('/page4'));
+      
       } else {
         Swal.fire({
           icon: 'error',
           title: 'Opps...',
           text: 'You failed with a score of ' + score + '/20.' + 'Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
-        })
-        navigate('/page4');
+        }).then(() => navigate('/page4'));
       }
     } else {
       setQuestionCount(questionCount + 1);
+      handleNextQuestion();
     }
     setInputValue('');
   }
@@ -137,7 +137,7 @@ const timeLefter = () => {
       <p><b>Question No: {questionCount}/20</b></p>
       <p><b>Remaining time: {remainingTime} seconds</b></p>
         <img src={data.question} alt={`Question ${questionCount}`} />
-        <h3>{data.solution}</h3>
+        {/* <h3>{data.solution}</h3> */}
       </div>
       <form onSubmit={handleSubmit}>
         <label>
