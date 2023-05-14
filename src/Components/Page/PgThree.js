@@ -10,7 +10,7 @@ function PgThree() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [solution, setSolution] = useState('');
-  const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds  ***
+  // const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds  ***
   const [questionCount, setQuestionCount] = useState(1);
   const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -23,7 +23,7 @@ function PgThree() {
 
   useEffect(() => {
     getData();
-    timeLefter();
+    // timeLefter();
   }, [questionCount]);
 
   const getData = () => {      //01
@@ -122,11 +122,11 @@ function PgThree() {
     }
   }
 
-const timeLefter = () => {
-  if (timeLeft === 120) {
-    alert('2 minutes left!');
-  }
-}
+// const timeLefter = () => {
+//   if (timeLeft === 120) {
+//     alert('2 minutes left!');
+//   }
+// }
   return (
     <div className="Main">
     <Card className="CardQuestion">
@@ -150,10 +150,11 @@ const timeLefter = () => {
     </div>
         <br/> 
         
-      </form>
+      
       <div className='ui two buttons'>
       <Button color='teal' type="text" onClick={handleAnswerSubmit} >Submit/Next</Button>  
       </div>
+      </form>
     </Card>
     </div>
   );
