@@ -10,7 +10,6 @@ function PgThree() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [solution, setSolution] = useState('');
-  // const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds  ***
   const [questionCount, setQuestionCount] = useState(1);
   const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -23,10 +22,9 @@ function PgThree() {
 
   useEffect(() => {
     getData();
-    // timeLefter();
   }, [questionCount]);
 
-  const getData = () => {      //01
+  const getData = () => {   
     axios({
       method: 'get',
       url: 'https://marcconrad.com/uob/smile/api.php',
@@ -40,7 +38,7 @@ function PgThree() {
       });
   };
 
-  useEffect(() => {              //02
+  useEffect(() => {          
     const timer = setInterval(() => {
       setRemainingTime(prevRemainingTime => prevRemainingTime - 1);
     }, 1000);
@@ -58,14 +56,14 @@ function PgThree() {
             Swal.fire({
               icon: 'success',
               title: 'Hey...',
-              text: 'You passed with a score of ' + score + '/20.' + 'Congratulation, You are eligible for the SUPER CLASS!',
+              text: 'You passed with a score of ' + score + '/20. Congratulation, You are eligible for the SUPER CLASS!',
             })
             navigate('/page4');
           } else {
             Swal.fire({
               icon: 'error',
               title: 'Opps...',
-              text: 'You failed with a score of ' + score + '/20.' + 'Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
+              text: 'You failed with a score of ' + score + '/20. Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
             })
             navigate('/page4');
           }
@@ -73,7 +71,6 @@ function PgThree() {
     }
   });
 
-  // -------------------------------------
   // set timer to 180 seconds
   function handleNextQuestion() {
     setCurrentQuestionIndex(prevCurrentQuestionIndex => prevCurrentQuestionIndex + 1);
@@ -95,14 +92,14 @@ function PgThree() {
         Swal.fire({
           icon: 'success',
           title: 'Hey...',
-          text: 'You passed with a score of ' + score + '/20.' + 'Congratulation, You are eligible for the SUPER CLASS!',
+          text: 'You passed with a score of ' + score + '/20. Congratulation, You are eligible for the SUPER CLASS!',
         }).then(() => navigate('/page4'));
       
       } else {
         Swal.fire({
           icon: 'error',
           title: 'Opps...',
-          text: 'You failed with a score of ' + score + '/20.' + 'Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
+          text: 'You failed with a score of ' + score + '/20. Sorry Dear, You are not eligible for the SUPER CLASS! Try Later!',
         }).then(() => navigate('/page4'));
       }
     } else {
@@ -122,11 +119,6 @@ function PgThree() {
     }
   }
 
-// const timeLefter = () => {
-//   if (timeLeft === 120) {
-//     alert('2 minutes left!');
-//   }
-// }
   return (
     <div className="Main">
     <Card className="CardQuestion">
@@ -137,7 +129,7 @@ function PgThree() {
       <p><b>Question No: {questionCount}/20</b></p>
       <p><b>Remaining time: {remainingTime} seconds</b></p>
         <img src={data.question} alt={`Question ${questionCount}`} />
-        {/* <h3>{data.solution}</h3> */}
+        {/* <h3>{data.solution}</h3>  */}
       </div>
       <form onSubmit={handleSubmit}>
         <label>
@@ -150,7 +142,6 @@ function PgThree() {
     </div>
         <br/> 
         
-      
       <div className='ui two buttons'>
       <Button color='teal' type="text" onClick={handleAnswerSubmit} >Submit/Next</Button>  
       </div>

@@ -3,7 +3,6 @@ import { Card,Button,Icon } from "semantic-ui-react"
 import "./Main.css"
 import image from '../../Components/Images/question-job.png';
 import { useNavigate } from 'react-router-dom';
-import PgTwo from "./PgTwo";
 
 
  export default function PgOne(){
@@ -36,10 +35,7 @@ import PgTwo from "./PgTwo";
           </div>
         </Card.Content>
       </Card>
-      {/* <div className="Sample">
-            <h1>sample</h1>
-        </div> */}
-        
+
         </div>
       
     )

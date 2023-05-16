@@ -19,10 +19,8 @@ export default function PgFour(){
 <br/><br/>
 <Button compact onClick={()=>{navigate("/home")}}>Home</Button>
 </form>
-         
         </div>
-      
-        
+       
     )
 }
 

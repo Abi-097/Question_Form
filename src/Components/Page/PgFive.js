@@ -46,7 +46,6 @@ function PgFive() {
     }
     if (questionCount === 20) {
       if (score >= 15) {
-        // alert(' ');
         Swal.fire({
           icon: 'success',
           title: 'Hey...',
@@ -81,7 +80,7 @@ function PgFive() {
 
   const nextPage = setTimeout(() => {    //timer
     if (timeLeft === 0) {
-      navigate.navigate('NextPage'); // navigate to the next page
+      navigate.navigate('/page4'); // navigate to the next page
     } else {
       setTimeLeft(timeLeft - 1);
       
@@ -117,7 +116,6 @@ const seconds = timeLeft % 60;
           <div class="ui error input"><input placeholder="Input Value" type="text" value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
           required/></div>
-          {/* <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} /> */}
         </label>
         <br/><br/>
        <Button color='grey' type="submit" >Submit/Next</Button>  

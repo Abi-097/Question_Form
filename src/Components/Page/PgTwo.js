@@ -1,5 +1,5 @@
 import {React,useState} from "react";
-import { Card,Button,Icon } from "semantic-ui-react";
+import { Card,Button } from "semantic-ui-react";
 import image from '../../Components/Images/light-bulb-clip-art.png';
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,6 @@ export default function PgTwo(){
 
     return(
         <div className="Main">
-        {/* <h1>Page2</h1> */}
 <form onSubmit={handleSubmit} className="ui form attached fluid segment RegSize" >
 <Card.Header className="cardHeader">Register Form</Card.Header>
 <br/><br/>
@@ -39,7 +38,6 @@ export default function PgTwo(){
   </div>
   <Card.Content extra>
           <div className='ui two buttons'>
-          {/* <Button color='teal' >Submit</Button> */}
           <Button color='teal' type="submit" onClick={()=> {navigation("/page3")}} >Submit/Next</Button>  
           </div>
         </Card.Content>
